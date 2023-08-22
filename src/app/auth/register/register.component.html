@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row justify-content-center align-items-center min-vh-100">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header text-center bg-success text-white">
+          <h4>Register</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="registerForm" method="post" (ngSubmit)="register(registerForm.value)">
+            <label for="exampleInputusername1" class="form-label">UserEmail</label>
+            <input type="email"
+                   class="form-control"
+                   id="exampleInputusername1"
+                   placeholder="Enter your username"
+                   formControlName="email"
+            >
+            <label for="password" class="form-label">Password</label>
+            <input type="password"
+                   class="form-control"
+                   id="password"
+                   placeholder="Enter your password"
+                   formControlName="password"
+            >
+            <button type="submit" class="btn btn-success w-100">Register</button>
+          </form>
+          <a routerLink="" >Login!!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

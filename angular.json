@@ -25,9 +25,12 @@
               "src/assets"
             ],
             "styles": [
+              "bootstrap/scss/bootstrap.scss",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -63,7 +66,8 @@
               "browserTarget": "tokonyadia:build:production"
             },
             "development": {
-              "browserTarget": "tokonyadia:build:development"
+              "browserTarget": "tokonyadia:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -94,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "576d9499-afac-44f2-b1f6-bd7ce3fd4db2"
   }
 }
