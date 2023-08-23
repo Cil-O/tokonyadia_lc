@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="row justify-content-center align-items-center min-vh-75">
+    <div class="">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Store List</h3>
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <thead>
+            <tr>
+              <th>No</th>
+              <th>Name</th>
+              <th>Domain</th>
+              <th>Address</th>
+              <th>Mobile Phone</th>
+              <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <ng-container *ngFor="let seller of seller; let i = index">
+              <tr>
+                <td>{{ i + 1 }}</td>
+                <td>{{ seller.store.name }}</td>
+                <td>{{ seller.store.domain }}</td>
+                <td>{{ seller.store.address }}</td>
+                <td>{{ seller.store.mobilePhone }}</td>
+                <td>
+                  <button type="button" class="btn btn-danger" (click)="deleteProduct(i)">Delete</button>
+                  <button *ngIf="selectedProductIndex != i" type="button" class="btn btn-success" (click)="updateProduct(i)">Update</button>
+                </td>
+              </tr>
+            </ng-container>
+            </tbody>
+          </table>
+
+          <div class="page-buttons">
+            <button
+              class="page-button"
+              *ngFor="let page of totalPagesArray"
+              (click)="onPageButtonClick(page)"
+              [class.active]="page === currentPage"
+            >
+              {{ page + 1 }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
